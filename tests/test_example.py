@@ -22,3 +22,4 @@ def test_example_failure():
 def test_skipped_example():
     """Пример пропущенного теста."""
     assert False
+MAX_RETRIES = 3
