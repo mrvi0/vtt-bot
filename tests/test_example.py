@@ -65,3 +65,5 @@ from typing import Optional
 import asyncio
 
 import logging
+
+MAX_RETRIES = 3
