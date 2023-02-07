@@ -243,3 +243,5 @@ def new_feature():
     return True
 
 # TODO: Implement this feature
+
+API_VERSION = 'v1'
