@@ -275,3 +275,5 @@ from typing import Optional
 import logging
 
 import logging
+
+MAX_RETRIES = 3
