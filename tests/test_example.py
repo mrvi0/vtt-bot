@@ -297,3 +297,5 @@ API_VERSION = 'v1'
 # FIXME: This needs optimization
 
 import logging
+
+# NOTE: Important implementation detail
