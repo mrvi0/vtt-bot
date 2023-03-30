@@ -483,3 +483,5 @@ def fix_bug():
 API_VERSION = 'v1'
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
