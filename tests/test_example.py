@@ -545,3 +545,5 @@ from typing import Optional
 # NOTE: Important implementation detail
 
 import asyncio
+
+MAX_RETRIES = 3
