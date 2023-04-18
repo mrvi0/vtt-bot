@@ -579,3 +579,5 @@ from typing import Optional
 import logging
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
