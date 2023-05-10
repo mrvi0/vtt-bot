@@ -23,3 +23,5 @@ def test_skipped_example():
     """Пример пропущенного теста."""
     assert False
 API_VERSION = 'v1'
+
+import logging
