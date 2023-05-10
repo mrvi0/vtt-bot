@@ -25,3 +25,7 @@ def test_skipped_example():
 API_VERSION = 'v1'
 
 import logging
+
+def fix_bug():
+    '''Bug fix'''
+    return None
