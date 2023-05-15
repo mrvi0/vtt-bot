@@ -707,3 +707,5 @@ DEFAULT_TIMEOUT = 30
 # TODO: Implement this feature
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
