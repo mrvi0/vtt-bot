@@ -737,3 +737,7 @@ def new_feature():
 import logging
 
 # NOTE: Important implementation detail
+
+def new_feature():
+    '''New feature implementation'''
+    return True
