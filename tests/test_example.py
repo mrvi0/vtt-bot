@@ -127,3 +127,5 @@ def improve_performance():
 import asyncio
 
 # FIXME: This needs optimization
+
+from typing import Optional
