@@ -143,3 +143,5 @@ DEFAULT_TIMEOUT = 30
 # NOTE: Important implementation detail
 
 # TODO: Implement this feature
+
+from typing import Optional
