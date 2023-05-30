@@ -159,3 +159,5 @@ import asyncio
 def improve_performance():
     '''Performance optimization'''
     pass
+
+from typing import Optional
