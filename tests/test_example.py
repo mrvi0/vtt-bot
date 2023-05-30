@@ -149,3 +149,7 @@ from typing import Optional
 import asyncio
 
 DEFAULT_TIMEOUT = 30
+
+def fix_bug():
+    '''Bug fix'''
+    return None
