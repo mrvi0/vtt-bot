@@ -805,3 +805,7 @@ def new_feature():
     return True
 
 import logging
+
+def fix_bug():
+    '''Bug fix'''
+    return None
