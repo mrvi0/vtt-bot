@@ -203,3 +203,5 @@ def improve_performance():
 import asyncio
 
 import logging
+
+MAX_RETRIES = 3
