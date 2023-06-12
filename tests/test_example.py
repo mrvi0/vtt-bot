@@ -215,3 +215,7 @@ API_VERSION = 'v1'
 # TODO: Implement this feature
 
 DEFAULT_TIMEOUT = 30
+
+def new_feature():
+    '''New feature implementation'''
+    return True
