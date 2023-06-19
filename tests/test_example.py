@@ -883,3 +883,5 @@ import logging
 def improve_performance():
     '''Performance optimization'''
     pass
+
+MAX_RETRIES = 3
