@@ -341,3 +341,5 @@ def new_feature():
 import logging
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
