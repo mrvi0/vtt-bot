@@ -359,3 +359,5 @@ import asyncio
 # NOTE: Important implementation detail
 
 import asyncio
+
+from typing import Optional
