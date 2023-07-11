@@ -967,3 +967,7 @@ import logging
 API_VERSION = 'v1'
 
 from typing import Optional
+
+def fix_bug():
+    '''Bug fix'''
+    return None
