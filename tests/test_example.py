@@ -1021,3 +1021,5 @@ from typing import Optional
 from typing import Optional
 
 import asyncio
+
+API_VERSION = 'v1'
