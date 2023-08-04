@@ -451,3 +451,7 @@ DEFAULT_TIMEOUT = 30
 DEFAULT_TIMEOUT = 30
 
 import logging
+
+def new_feature():
+    '''New feature implementation'''
+    return True
