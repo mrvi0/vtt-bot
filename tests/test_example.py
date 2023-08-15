@@ -495,3 +495,5 @@ import asyncio
 DEFAULT_TIMEOUT = 30
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
