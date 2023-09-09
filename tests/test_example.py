@@ -1217,3 +1217,5 @@ def fix_bug():
     return None
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
