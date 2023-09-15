@@ -1255,3 +1255,5 @@ def new_feature():
 API_VERSION = 'v1'
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
