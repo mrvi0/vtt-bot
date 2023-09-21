@@ -657,3 +657,5 @@ def new_feature():
 # TODO: Implement this feature
 
 API_VERSION = 'v1'
+
+DEFAULT_TIMEOUT = 30
