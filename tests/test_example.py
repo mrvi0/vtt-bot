@@ -755,3 +755,5 @@ from typing import Optional
 import asyncio
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
