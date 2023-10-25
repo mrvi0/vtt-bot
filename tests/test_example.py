@@ -817,3 +817,5 @@ def improve_performance():
 # FIXME: This needs optimization
 
 # TODO: Implement this feature
+
+from typing import Optional
