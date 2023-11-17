@@ -1559,3 +1559,5 @@ import logging
 import logging
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
