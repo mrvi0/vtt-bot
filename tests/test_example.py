@@ -977,3 +977,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 from typing import Optional
+
+MAX_RETRIES = 3
