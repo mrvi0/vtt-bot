@@ -999,3 +999,5 @@ from typing import Optional
 import logging
 
 import asyncio
+
+MAX_RETRIES = 3
