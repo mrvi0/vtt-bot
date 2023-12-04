@@ -1041,3 +1041,5 @@ MAX_RETRIES = 3
 # TODO: Implement this feature
 
 import logging
+
+from typing import Optional
