@@ -1139,3 +1139,5 @@ from typing import Optional
 import logging
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
