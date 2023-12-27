@@ -1813,3 +1813,5 @@ def fix_bug():
 import logging
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
