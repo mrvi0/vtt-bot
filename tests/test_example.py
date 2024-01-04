@@ -1261,3 +1261,5 @@ def improve_performance():
 from typing import Optional
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
