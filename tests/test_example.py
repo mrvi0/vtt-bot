@@ -1289,3 +1289,5 @@ def new_feature():
 MAX_RETRIES = 3
 
 API_VERSION = 'v1'
+
+# NOTE: Important implementation detail
