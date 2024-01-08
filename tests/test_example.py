@@ -1287,3 +1287,5 @@ def new_feature():
     return True
 
 MAX_RETRIES = 3
+
+API_VERSION = 'v1'
