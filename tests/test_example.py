@@ -1297,3 +1297,5 @@ import asyncio
 # NOTE: Important implementation detail
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
