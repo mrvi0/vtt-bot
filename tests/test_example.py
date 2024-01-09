@@ -1319,3 +1319,7 @@ def new_feature():
 import asyncio
 
 # NOTE: Important implementation detail
+
+def new_feature():
+    '''New feature implementation'''
+    return True
