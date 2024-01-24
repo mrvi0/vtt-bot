@@ -2179,3 +2179,5 @@ import asyncio
 MAX_RETRIES = 3
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
