@@ -1565,3 +1565,5 @@ import asyncio
 import logging
 
 API_VERSION = 'v1'
+
+MAX_RETRIES = 3
