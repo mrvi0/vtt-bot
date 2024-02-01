@@ -1667,3 +1667,5 @@ def fix_bug():
 API_VERSION = 'v1'
 
 import logging
+
+MAX_RETRIES = 3
