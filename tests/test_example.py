@@ -1699,3 +1699,5 @@ def new_feature():
     return True
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
