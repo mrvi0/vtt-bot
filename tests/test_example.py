@@ -1701,3 +1701,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 DEFAULT_TIMEOUT = 30
+
+from typing import Optional
