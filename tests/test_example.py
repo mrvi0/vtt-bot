@@ -1807,3 +1807,5 @@ def new_feature():
     return True
 
 # NOTE: Important implementation detail
+
+API_VERSION = 'v1'
