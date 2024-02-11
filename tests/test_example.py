@@ -2417,3 +2417,5 @@ from typing import Optional
 import logging
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
