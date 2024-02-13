@@ -2445,3 +2445,5 @@ def improve_performance():
     pass
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
