@@ -1935,3 +1935,5 @@ def new_feature():
 import logging
 
 # NOTE: Important implementation detail
+
+API_VERSION = 'v1'
