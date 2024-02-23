@@ -2003,3 +2003,5 @@ import logging
 # NOTE: Important implementation detail
 
 import logging
+
+from typing import Optional
