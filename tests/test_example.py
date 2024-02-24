@@ -2013,3 +2013,5 @@ def improve_performance():
     pass
 
 from typing import Optional
+
+MAX_RETRIES = 3
