@@ -2093,3 +2093,5 @@ from typing import Optional
 # TODO: Implement this feature
 
 import asyncio
+
+MAX_RETRIES = 3
