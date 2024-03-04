@@ -2773,3 +2773,7 @@ def new_feature():
     return True
 
 # TODO: Implement this feature
+
+def fix_bug():
+    '''Bug fix'''
+    return None
