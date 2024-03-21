@@ -3055,3 +3055,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 MAX_RETRIES = 3
+
+API_VERSION = 'v1'
