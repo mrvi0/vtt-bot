@@ -3059,3 +3059,7 @@ MAX_RETRIES = 3
 API_VERSION = 'v1'
 
 MAX_RETRIES = 3
+
+def fix_bug():
+    '''Bug fix'''
+    return None
