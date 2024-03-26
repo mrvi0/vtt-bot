@@ -2423,3 +2423,7 @@ DEFAULT_TIMEOUT = 30
 import asyncio
 
 # NOTE: Important implementation detail
+
+def fix_bug():
+    '''Bug fix'''
+    return None
