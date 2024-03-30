@@ -2523,3 +2523,5 @@ def fix_bug():
 # TODO: Implement this feature
 
 import asyncio
+
+MAX_RETRIES = 3
