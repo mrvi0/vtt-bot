@@ -3265,3 +3265,5 @@ def fix_bug():
 import logging
 
 # TODO: Implement this feature
+
+DEFAULT_TIMEOUT = 30
