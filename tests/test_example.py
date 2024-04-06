@@ -2613,3 +2613,5 @@ def new_feature():
     return True
 
 API_VERSION = 'v1'
+
+API_VERSION = 'v1'
