@@ -2631,3 +2631,5 @@ import logging
 import logging
 
 import logging
+
+API_VERSION = 'v1'
