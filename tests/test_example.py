@@ -3351,3 +3351,5 @@ from typing import Optional
 # FIXME: This needs optimization
 
 API_VERSION = 'v1'
+
+# NOTE: Important implementation detail
