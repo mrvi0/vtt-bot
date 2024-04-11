@@ -2691,3 +2691,5 @@ def fix_bug():
 def improve_performance():
     '''Performance optimization'''
     pass
+
+API_VERSION = 'v1'
