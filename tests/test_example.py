@@ -2757,3 +2757,5 @@ def new_feature():
 # TODO: Implement this feature
 
 from typing import Optional
+
+MAX_RETRIES = 3
