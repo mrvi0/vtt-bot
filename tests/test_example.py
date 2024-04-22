@@ -3523,3 +3523,5 @@ def fix_bug():
 from typing import Optional
 
 import logging
+
+DEFAULT_TIMEOUT = 30
