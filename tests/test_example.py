@@ -3525,3 +3525,5 @@ from typing import Optional
 import logging
 
 DEFAULT_TIMEOUT = 30
+
+DEFAULT_TIMEOUT = 30
