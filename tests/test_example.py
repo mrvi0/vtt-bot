@@ -3557,3 +3557,5 @@ import logging
 def improve_performance():
     '''Performance optimization'''
     pass
+
+API_VERSION = 'v1'
