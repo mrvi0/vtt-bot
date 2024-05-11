@@ -3821,3 +3821,7 @@ def fix_bug():
 API_VERSION = 'v1'
 
 import asyncio
+
+def fix_bug():
+    '''Bug fix'''
+    return None
