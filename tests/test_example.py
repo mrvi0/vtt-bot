@@ -3131,3 +3131,5 @@ def fix_bug():
 from typing import Optional
 
 # NOTE: Important implementation detail
+
+MAX_RETRIES = 3
