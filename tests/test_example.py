@@ -3233,3 +3233,7 @@ import logging
 # FIXME: This needs optimization
 
 import asyncio
+
+def fix_bug():
+    '''Bug fix'''
+    return None
