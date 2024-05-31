@@ -4095,3 +4095,7 @@ DEFAULT_TIMEOUT = 30
 # TODO: Implement this feature
 
 # NOTE: Important implementation detail
+
+def fix_bug():
+    '''Bug fix'''
+    return None
