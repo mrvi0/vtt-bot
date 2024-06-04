@@ -3407,3 +3407,5 @@ MAX_RETRIES = 3
 import logging
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
