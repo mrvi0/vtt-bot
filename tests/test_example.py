@@ -3455,3 +3455,5 @@ def improve_performance():
     pass
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
