@@ -4281,3 +4281,5 @@ def improve_performance():
     pass
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
