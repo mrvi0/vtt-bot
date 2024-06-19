@@ -3605,3 +3605,5 @@ import logging
 # NOTE: Important implementation detail
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
