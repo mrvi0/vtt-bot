@@ -3631,3 +3631,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 from typing import Optional
+
+MAX_RETRIES = 3
