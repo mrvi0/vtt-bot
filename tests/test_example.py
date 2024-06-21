@@ -4369,3 +4369,5 @@ def new_feature():
 from typing import Optional
 
 import logging
+
+MAX_RETRIES = 3
