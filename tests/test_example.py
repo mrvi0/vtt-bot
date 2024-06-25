@@ -3707,3 +3707,5 @@ def new_feature():
     return True
 
 # FIXME: This needs optimization
+
+from typing import Optional
