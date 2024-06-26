@@ -4429,3 +4429,5 @@ MAX_RETRIES = 3
 import asyncio
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
