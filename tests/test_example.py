@@ -3753,3 +3753,5 @@ from typing import Optional
 DEFAULT_TIMEOUT = 30
 
 # NOTE: Important implementation detail
+
+API_VERSION = 'v1'
