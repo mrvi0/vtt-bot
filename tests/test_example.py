@@ -3837,3 +3837,5 @@ from typing import Optional
 import asyncio
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
