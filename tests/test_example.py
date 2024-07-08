@@ -3859,3 +3859,5 @@ import logging
 import asyncio
 
 # NOTE: Important implementation detail
+
+from typing import Optional
