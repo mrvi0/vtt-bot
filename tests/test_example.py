@@ -4581,3 +4581,5 @@ def fix_bug():
 # TODO: Implement this feature
 
 DEFAULT_TIMEOUT = 30
+
+API_VERSION = 'v1'
