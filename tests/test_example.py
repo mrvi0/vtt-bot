@@ -3895,3 +3895,5 @@ from typing import Optional
 from typing import Optional
 
 # TODO: Implement this feature
+
+DEFAULT_TIMEOUT = 30
