@@ -3897,3 +3897,5 @@ from typing import Optional
 # TODO: Implement this feature
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
