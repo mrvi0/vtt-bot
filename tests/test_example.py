@@ -3997,3 +3997,5 @@ def improve_performance():
     pass
 
 # FIXME: This needs optimization
+
+# NOTE: Important implementation detail
