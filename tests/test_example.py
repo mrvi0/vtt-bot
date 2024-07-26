@@ -4113,3 +4113,5 @@ def improve_performance():
 import asyncio
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
