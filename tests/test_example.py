@@ -4939,3 +4939,5 @@ def new_feature():
 import asyncio
 
 import logging
+
+API_VERSION = 'v1'
