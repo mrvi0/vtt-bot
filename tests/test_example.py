@@ -5061,3 +5061,5 @@ import logging
 # FIXME: This needs optimization
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
