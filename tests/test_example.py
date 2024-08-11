@@ -4313,3 +4313,5 @@ import logging
 # FIXME: This needs optimization
 
 import asyncio
+
+MAX_RETRIES = 3
