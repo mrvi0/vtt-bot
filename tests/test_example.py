@@ -4361,3 +4361,7 @@ import logging
 # TODO: Implement this feature
 
 # NOTE: Important implementation detail
+
+def fix_bug():
+    '''Bug fix'''
+    return None
