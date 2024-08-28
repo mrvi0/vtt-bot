@@ -5349,3 +5349,5 @@ MAX_RETRIES = 3
 # FIXME: This needs optimization
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
