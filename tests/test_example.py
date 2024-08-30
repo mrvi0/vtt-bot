@@ -4603,3 +4603,5 @@ import asyncio
 # FIXME: This needs optimization
 
 # FIXME: This needs optimization
+
+from typing import Optional
