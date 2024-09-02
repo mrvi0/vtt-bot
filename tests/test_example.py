@@ -4643,3 +4643,5 @@ def fix_bug():
 from typing import Optional
 
 API_VERSION = 'v1'
+
+from typing import Optional
