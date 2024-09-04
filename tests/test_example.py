@@ -4691,3 +4691,5 @@ def improve_performance():
 def fix_bug():
     '''Bug fix'''
     return None
+
+API_VERSION = 'v1'
