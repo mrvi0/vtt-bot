@@ -4769,3 +4769,5 @@ def improve_performance():
 import logging
 
 # TODO: Implement this feature
+
+DEFAULT_TIMEOUT = 30
