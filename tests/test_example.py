@@ -4789,3 +4789,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 import logging
+
+# NOTE: Important implementation detail
