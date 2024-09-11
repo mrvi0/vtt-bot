@@ -5555,3 +5555,5 @@ import logging
 # NOTE: Important implementation detail
 
 # FIXME: This needs optimization
+
+from typing import Optional
