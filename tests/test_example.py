@@ -4867,3 +4867,5 @@ def improve_performance():
 import logging
 
 from typing import Optional
+
+MAX_RETRIES = 3
