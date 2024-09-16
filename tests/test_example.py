@@ -5619,3 +5619,5 @@ import logging
 from typing import Optional
 
 import asyncio
+
+API_VERSION = 'v1'
