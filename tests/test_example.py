@@ -4933,3 +4933,5 @@ def new_feature():
 def fix_bug():
     '''Bug fix'''
     return None
+
+MAX_RETRIES = 3
