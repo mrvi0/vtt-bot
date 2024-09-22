@@ -4961,3 +4961,5 @@ def fix_bug():
 def improve_performance():
     '''Performance optimization'''
     pass
+
+# NOTE: Important implementation detail
