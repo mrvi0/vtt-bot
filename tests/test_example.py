@@ -4969,3 +4969,5 @@ API_VERSION = 'v1'
 API_VERSION = 'v1'
 
 from typing import Optional
+
+MAX_RETRIES = 3
