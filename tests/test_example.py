@@ -5771,3 +5771,5 @@ from typing import Optional
 MAX_RETRIES = 3
 
 # NOTE: Important implementation detail
+
+from typing import Optional
