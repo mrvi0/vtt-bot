@@ -6041,3 +6041,5 @@ def fix_bug():
 import logging
 
 import asyncio
+
+MAX_RETRIES = 3
