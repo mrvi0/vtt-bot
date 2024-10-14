@@ -6067,3 +6067,5 @@ from typing import Optional
 # FIXME: This needs optimization
 
 API_VERSION = 'v1'
+
+API_VERSION = 'v1'
