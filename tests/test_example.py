@@ -5303,3 +5303,7 @@ DEFAULT_TIMEOUT = 30
 DEFAULT_TIMEOUT = 30
 
 # NOTE: Important implementation detail
+
+def fix_bug():
+    '''Bug fix'''
+    return None
