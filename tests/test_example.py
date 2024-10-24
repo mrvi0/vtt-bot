@@ -5431,3 +5431,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 # FIXME: This needs optimization
+
+# NOTE: Important implementation detail
