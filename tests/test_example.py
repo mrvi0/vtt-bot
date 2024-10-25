@@ -5449,3 +5449,5 @@ import logging
 import logging
 
 import logging
+
+DEFAULT_TIMEOUT = 30
