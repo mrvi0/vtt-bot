@@ -5483,3 +5483,5 @@ import logging
 API_VERSION = 'v1'
 
 MAX_RETRIES = 3
+
+DEFAULT_TIMEOUT = 30
