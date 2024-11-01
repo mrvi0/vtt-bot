@@ -5559,3 +5559,5 @@ def fix_bug():
 # NOTE: Important implementation detail
 
 import asyncio
+
+MAX_RETRIES = 3
