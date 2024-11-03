@@ -6365,3 +6365,5 @@ def new_feature():
 import logging
 
 import asyncio
+
+MAX_RETRIES = 3
