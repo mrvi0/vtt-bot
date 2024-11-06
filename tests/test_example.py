@@ -6403,3 +6403,5 @@ def fix_bug():
     return None
 
 import logging
+
+# NOTE: Important implementation detail
