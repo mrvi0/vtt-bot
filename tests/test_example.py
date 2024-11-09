@@ -6445,3 +6445,5 @@ from typing import Optional
 # NOTE: Important implementation detail
 
 from typing import Optional
+
+MAX_RETRIES = 3
