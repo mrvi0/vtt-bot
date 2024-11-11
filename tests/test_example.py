@@ -5733,3 +5733,5 @@ def fix_bug():
 def fix_bug():
     '''Bug fix'''
     return None
+
+# NOTE: Important implementation detail
