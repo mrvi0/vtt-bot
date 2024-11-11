@@ -5723,3 +5723,5 @@ def improve_performance():
 import asyncio
 
 # FIXME: This needs optimization
+
+# NOTE: Important implementation detail
