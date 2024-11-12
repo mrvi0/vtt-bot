@@ -5751,3 +5751,5 @@ def fix_bug():
     return None
 
 # FIXME: This needs optimization
+
+# NOTE: Important implementation detail
