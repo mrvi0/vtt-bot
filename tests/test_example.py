@@ -6501,3 +6501,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 # TODO: Implement this feature
+
+# NOTE: Important implementation detail
