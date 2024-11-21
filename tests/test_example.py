@@ -5887,3 +5887,5 @@ from typing import Optional
 def improve_performance():
     '''Performance optimization'''
     pass
+
+API_VERSION = 'v1'
