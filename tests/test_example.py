@@ -6669,3 +6669,5 @@ import asyncio
 # TODO: Implement this feature
 
 # NOTE: Important implementation detail
+
+API_VERSION = 'v1'
