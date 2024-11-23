@@ -6681,3 +6681,7 @@ def new_feature():
     return True
 
 # FIXME: This needs optimization
+
+def fix_bug():
+    '''Bug fix'''
+    return None
