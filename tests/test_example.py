@@ -5919,3 +5919,5 @@ def new_feature():
     return True
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
