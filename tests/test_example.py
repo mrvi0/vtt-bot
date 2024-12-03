@@ -6809,3 +6809,5 @@ API_VERSION = 'v1'
 import logging
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
