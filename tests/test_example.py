@@ -6833,3 +6833,5 @@ import logging
 # FIXME: This needs optimization
 
 import logging
+
+from typing import Optional
