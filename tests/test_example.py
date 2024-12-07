@@ -6117,3 +6117,5 @@ def new_feature():
 # NOTE: Important implementation detail
 
 import logging
+
+MAX_RETRIES = 3
