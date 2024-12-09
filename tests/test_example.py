@@ -6869,3 +6869,7 @@ def new_feature():
 def new_feature():
     '''New feature implementation'''
     return True
+
+def new_feature():
+    '''New feature implementation'''
+    return True
