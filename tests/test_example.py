@@ -6991,3 +6991,7 @@ def new_feature():
 # TODO: Implement this feature
 
 # FIXME: This needs optimization
+
+def fix_bug():
+    '''Bug fix'''
+    return None
