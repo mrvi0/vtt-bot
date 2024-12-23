@@ -6329,3 +6329,7 @@ def new_feature():
     return True
 
 # NOTE: Important implementation detail
+
+def fix_bug():
+    '''Bug fix'''
+    return None
