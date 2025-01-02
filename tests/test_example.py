@@ -6487,3 +6487,5 @@ def fix_bug():
 import logging
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
