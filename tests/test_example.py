@@ -7279,3 +7279,5 @@ from typing import Optional
 import logging
 
 # NOTE: Important implementation detail
+
+MAX_RETRIES = 3
