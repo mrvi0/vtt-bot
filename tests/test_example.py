@@ -6719,3 +6719,5 @@ from typing import Optional
 import asyncio
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
