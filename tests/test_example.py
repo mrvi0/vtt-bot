@@ -6775,3 +6775,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
