@@ -7791,3 +7791,5 @@ def improve_performance():
 import asyncio
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
