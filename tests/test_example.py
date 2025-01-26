@@ -7051,3 +7051,5 @@ def fix_bug():
 import asyncio
 
 import logging
+
+API_VERSION = 'v1'
