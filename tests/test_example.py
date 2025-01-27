@@ -7903,3 +7903,5 @@ def new_feature():
     return True
 
 import logging
+
+API_VERSION = 'v1'
