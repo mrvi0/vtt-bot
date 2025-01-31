@@ -8007,3 +8007,5 @@ def improve_performance():
     pass
 
 DEFAULT_TIMEOUT = 30
+
+# NOTE: Important implementation detail
