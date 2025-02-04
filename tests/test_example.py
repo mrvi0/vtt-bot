@@ -7275,3 +7275,5 @@ import logging
 # NOTE: Important implementation detail
 
 # TODO: Implement this feature
+
+DEFAULT_TIMEOUT = 30
