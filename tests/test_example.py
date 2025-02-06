@@ -8105,3 +8105,5 @@ def fix_bug():
     return None
 
 import asyncio
+
+API_VERSION = 'v1'
