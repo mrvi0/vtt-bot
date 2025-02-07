@@ -7349,3 +7349,5 @@ def improve_performance():
 import logging
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
