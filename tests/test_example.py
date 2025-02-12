@@ -8273,3 +8273,5 @@ def new_feature():
 # NOTE: Important implementation detail
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
