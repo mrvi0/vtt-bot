@@ -7467,3 +7467,5 @@ from typing import Optional
 # FIXME: This needs optimization
 
 import asyncio
+
+API_VERSION = 'v1'
