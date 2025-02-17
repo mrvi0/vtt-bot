@@ -8405,3 +8405,5 @@ def new_feature():
 DEFAULT_TIMEOUT = 30
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
