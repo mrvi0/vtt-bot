@@ -8451,3 +8451,5 @@ DEFAULT_TIMEOUT = 30
 import logging
 
 import asyncio
+
+API_VERSION = 'v1'
