@@ -7833,3 +7833,5 @@ def improve_performance():
 import logging
 
 import logging
+
+DEFAULT_TIMEOUT = 30
