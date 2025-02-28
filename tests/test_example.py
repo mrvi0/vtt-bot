@@ -8731,3 +8731,5 @@ def improve_performance():
     pass
 
 from typing import Optional
+
+# NOTE: Important implementation detail
