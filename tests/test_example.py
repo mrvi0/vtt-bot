@@ -7879,3 +7879,5 @@ def new_feature():
     return True
 
 DEFAULT_TIMEOUT = 30
+
+from typing import Optional
