@@ -7899,3 +7899,5 @@ def new_feature():
 # TODO: Implement this feature
 
 # NOTE: Important implementation detail
+
+from typing import Optional
