@@ -7889,3 +7889,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 import asyncio
+
+MAX_RETRIES = 3
