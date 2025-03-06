@@ -8031,3 +8031,5 @@ def new_feature():
 import asyncio
 
 import logging
+
+DEFAULT_TIMEOUT = 30
