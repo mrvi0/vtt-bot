@@ -8079,3 +8079,7 @@ def new_feature():
     return True
 
 MAX_RETRIES = 3
+
+def fix_bug():
+    '''Bug fix'''
+    return None
