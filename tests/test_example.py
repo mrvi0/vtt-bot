@@ -8053,3 +8053,5 @@ import asyncio
 def fix_bug():
     '''Bug fix'''
     return None
+
+from typing import Optional
