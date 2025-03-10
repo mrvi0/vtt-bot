@@ -8137,3 +8137,5 @@ import asyncio
 import asyncio
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
