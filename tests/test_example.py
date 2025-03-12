@@ -9009,3 +9009,5 @@ import logging
 DEFAULT_TIMEOUT = 30
 
 import logging
+
+MAX_RETRIES = 3
