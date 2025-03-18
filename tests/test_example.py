@@ -8319,3 +8319,5 @@ import logging
 # FIXME: This needs optimization
 
 from typing import Optional
+
+MAX_RETRIES = 3
