@@ -8407,3 +8407,5 @@ def new_feature():
 # TODO: Implement this feature
 
 import asyncio
+
+MAX_RETRIES = 3
