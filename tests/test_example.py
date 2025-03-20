@@ -9215,3 +9215,5 @@ import asyncio
 import logging
 
 import asyncio
+
+API_VERSION = 'v1'
