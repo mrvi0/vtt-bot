@@ -8459,3 +8459,5 @@ def fix_bug():
     return None
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
