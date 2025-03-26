@@ -9377,3 +9377,5 @@ import logging
 # NOTE: Important implementation detail
 
 import logging
+
+MAX_RETRIES = 3
