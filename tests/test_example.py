@@ -9379,3 +9379,7 @@ import logging
 import logging
 
 MAX_RETRIES = 3
+
+def fix_bug():
+    '''Bug fix'''
+    return None
