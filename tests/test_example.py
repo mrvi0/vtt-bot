@@ -8655,3 +8655,5 @@ import asyncio
 # NOTE: Important implementation detail
 
 import logging
+
+MAX_RETRIES = 3
