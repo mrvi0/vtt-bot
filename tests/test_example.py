@@ -8687,3 +8687,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 import asyncio
+
+import logging
