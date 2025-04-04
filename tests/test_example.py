@@ -9607,3 +9607,5 @@ import asyncio
 import asyncio
 
 DEFAULT_TIMEOUT = 30
+
+DEFAULT_TIMEOUT = 30
