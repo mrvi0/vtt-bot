@@ -8857,3 +8857,7 @@ def fix_bug():
     return None
 
 # FIXME: This needs optimization
+
+def fix_bug():
+    '''Bug fix'''
+    return None
