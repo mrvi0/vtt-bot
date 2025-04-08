@@ -8885,3 +8885,5 @@ def new_feature():
 import asyncio
 
 # NOTE: Important implementation detail
+
+API_VERSION = 'v1'
