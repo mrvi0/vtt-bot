@@ -9715,3 +9715,5 @@ def fix_bug():
 API_VERSION = 'v1'
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
