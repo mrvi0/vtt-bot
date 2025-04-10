@@ -9699,3 +9699,5 @@ def new_feature():
 # TODO: Implement this feature
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
