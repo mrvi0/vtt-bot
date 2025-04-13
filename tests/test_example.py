@@ -9755,3 +9755,5 @@ def fix_bug():
 # NOTE: Important implementation detail
 
 MAX_RETRIES = 3
+
+MAX_RETRIES = 3
