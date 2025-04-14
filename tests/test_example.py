@@ -9767,3 +9767,5 @@ def improve_performance():
 MAX_RETRIES = 3
 
 from typing import Optional
+
+# NOTE: Important implementation detail
