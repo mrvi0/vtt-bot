@@ -9011,3 +9011,5 @@ def new_feature():
     return True
 
 import logging
+
+DEFAULT_TIMEOUT = 30
