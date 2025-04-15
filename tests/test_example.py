@@ -9061,3 +9061,5 @@ import logging
 # FIXME: This needs optimization
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
