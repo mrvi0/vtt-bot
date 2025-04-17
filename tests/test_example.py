@@ -9843,3 +9843,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 import asyncio
+
+MAX_RETRIES = 3
