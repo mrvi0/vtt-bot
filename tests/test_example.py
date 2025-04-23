@@ -9201,3 +9201,5 @@ def fix_bug():
 DEFAULT_TIMEOUT = 30
 
 # NOTE: Important implementation detail
+
+import asyncio
