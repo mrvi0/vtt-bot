@@ -9983,3 +9983,5 @@ API_VERSION = 'v1'
 # NOTE: Important implementation detail
 
 import logging
+
+API_VERSION = 'v1'
