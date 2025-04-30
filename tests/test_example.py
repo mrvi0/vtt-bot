@@ -9385,3 +9385,5 @@ import asyncio
 # TODO: Implement this feature
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
