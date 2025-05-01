@@ -9409,3 +9409,5 @@ from typing import Optional
 DEFAULT_TIMEOUT = 30
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
