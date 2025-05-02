@@ -10253,3 +10253,5 @@ import asyncio
 # TODO: Implement this feature
 
 import logging
+
+API_VERSION = 'v1'
