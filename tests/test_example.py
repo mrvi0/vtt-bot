@@ -10295,3 +10295,5 @@ import asyncio
 import asyncio
 
 from typing import Optional
+
+API_VERSION = 'v1'
