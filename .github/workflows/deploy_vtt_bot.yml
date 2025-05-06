@@ -1,0 +1,132 @@
+name: Build on L1 & Deploy VTT Bot to VPS2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build on L1, Push to GHCR, Deploy to VPS2
+    runs-on: [self-hosted, linux, l1-ci] # Метки твоего раннера на L1
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        id: buildx # Даем ID для использования в других шагах, если нужно
+        uses: docker/setup-buildx-action@v3
+
+      - name: Define Docker metadata
+        id: docker_meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }} # ghcr.io/mrvi0/vtt-telegram-bot
+          tags: |
+            type=sha,format=short,prefix=
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Login to GitHub Container Registry
+        if: github.event_name != 'pull_request' # Не логинимся для PR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKEN доступен для self-hosted runner
+
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          cache-from: type=local,src=/tmp/.buildx-cache-vttbot
+          cache-to: type=local,dest=/tmp/.buildx-cache-vttbot,mode=max
+          # Используем локальный кэш на L1 для ускорения последующих сборок
+
+      - name: Deploy to VPS2 via SSH from L1
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS2_WG_IP }}
+          username: ${{ secrets.VPS2_SSH_USER }}
+          key: ${{ secrets.L1_TO_VPS2_SSH_KEY }}
+          # port: 22 # Если SSH порт стандартный
+          script: |
+            set -e # Exit immediately if a command exits with a non-zero status.
+            APP_DIR="/opt/vtt-bot" # Путь к приложению на VPS2
+            COMPOSE_FILE="docker-compose.yml" # Имя файла Docker Compose на VPS2
+
+            echo ">>> Creating project directory on VPS2..."
+            mkdir -p $APP_DIR
+            cd $APP_DIR
+
+            echo ">>> Creating .env file on VPS2..."
+            echo "VTT_BOT_TOKEN=${{ secrets.VTT_BOT_TOKEN_SECRET }}" > .env
+            echo "DB_NAME=data/vtt_stats.db" >> .env # Фиксированный путь внутри контейнера, мапится на хост
+
+            echo ">>> Creating/Updating $COMPOSE_FILE on VPS2..."
+            # Копируем или создаем docker-compose.yml на VPS2
+            # Важно: image должен быть тот, что мы запушили в GHCR
+            cat << EOF > $COMPOSE_FILE
+            services:
+              vtt_bot:
+                image: ${{ steps.docker_meta.outputs.tags_latest_only }} # ghcr.io/mrvi0/vtt-telegram-bot:latest
+                container_name: vtt-telegram-bot
+                restart: unless-stopped
+                environment: # Docker Compose сам подхватит .env из текущей директории
+                  # Либо можно продублировать переменные здесь, если .env не используется compose
+                  # VTT_BOT_TOKEN: \${VTT_BOT_TOKEN} # Пример, если бы .env не было
+                volumes:
+                  - ./bot_data:/app/data 
+            # Убедитесь, что .env файл лежит рядом с docker-compose.yml
+            # или используйте env_file: .env в docker-compose.yml
+            EOF
+
+            # Логин в GHCR с VPS2 (если образы приватные, нужен PAT)
+            # Если образы публичные, этот шаг не нужен.
+            if [ -n "${{ secrets.GHCR_PAT_FOR_VPS }}" ]; then
+              echo ">>> Logging into GHCR from VPS2..."
+              echo "${{ secrets.GHCR_PAT_FOR_VPS }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            fi
+            
+            echo ">>> Pulling latest image from GHCR on VPS2..."
+            docker pull ${{ steps.docker_meta.outputs.tags_latest_only }} # Используем только :latest тег
+
+            echo ">>> Stopping and starting new container on VPS2..."
+            docker compose -f $COMPOSE_FILE down --remove-orphans || true # Игнорируем ошибку, если контейнеров нет
+            docker compose -f $COMPOSE_FILE up -d
+
+            echo ">>> Cleaning up unused Docker images on VPS2..."
+            docker image prune -a -f
+            echo ">>> VTT Bot Deployment complete on VPS2."
+
+      - name: Send Telegram Success Notification
+        if: success()
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TG_ALERT_CHAT_ID }}
+          token: ${{ secrets.TG_BOT_MONITOR_TOKEN }}
+          message: |
+            🚀 VTT Bot Deployed to VPS2 (via L1)
+            Repo: ${{ github.repository }}
+            Branch: `${{ github.ref_name }}`
+            Commit: `${{ github.sha }}`
+            By: `${{ github.actor }}`
+            Image: `${{ steps.docker_meta.outputs.tags_latest_only }}`
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Send Telegram Failure Notification
+        if: failure()
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TG_ALERT_CHAT_ID }}
+          token: ${{ secrets.TG_BOT_MONITOR_TOKEN }}
+          message: |
+            🔥 VTT Bot Deployment Failed!
+            Repo: ${{ github.repository }}
+            Branch: `${{ github.ref_name }}`
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
