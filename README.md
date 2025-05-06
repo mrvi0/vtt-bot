@@ -1,12 +1,7 @@
 # Voice-to-Text Telegram Bot (VTT Bot)
 
-<!-- Бейджи: Замените mrvi0/vtt-telegram-bot на ваш реальный путь -->
-[![CI Status](https://github.com/mrvi0/vtt-telegram-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/mrvi0/vtt-telegram-bot/actions/workflows/ci.yml) 
-<!-- Предполагаем, что будет CI workflow с именем ci.yml -->
-[![Lint Status](https://github.com/mrvi0/vtt-telegram-bot/actions/workflows/lint.yml/badge.svg)](https://github.com/mrvi0/vtt-telegram-bot/actions/workflows/lint.yml)
-<!-- Предполагаем, что будет Lint workflow с именем lint.yml -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<!-- Решил предложить MIT, так как AGPL может быть слишком строгой для такого бота, но можешь изменить -->
+[![License](https://img.shields.io/github/license/mrvi0/vtt-bot?style=flat-square)](https://github.com/mrvi0/vtt-bot/blob/main/LICENSE)
+[![lint.yml](https://img.shields.io/github/actions/workflow/status/mrvi0/vtt-bot/lint.yml?branch=main&style=flat-square)](https://github.com/mrvi0/vtt-bot/actions/workflows/lint.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/mrvi0/vtt-bot?style=flat-square) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Телеграм-бот, который преобразует голосовые сообщения и видеосообщения ("кружочки") в текст. Полезен для тех, кто не может прослушать аудио в данный момент или предпочитает читать.
 
