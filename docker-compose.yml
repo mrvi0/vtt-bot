@@ -1,17 +1,17 @@
-version: '3.9'
+version: '3.8'
 
 services:
-  app:
-    container_name: project-name-app
-    build: ./src
-    env_file:
-      - .env
-    ports:
-      - "${APP_PORT}:3000"
+  vtt_bot:
+    build: .
+    container_name: vtt-telegram-bot
     restart: unless-stopped
-    networks:
-      - default
-
-networks:
-  default:
-    driver: bridge
+    # env_file: .env # Можно использовать, если .env не копируется в образ
+    environment: # Или передавать переменные напрямую (лучше для токенов)
+      - VTT_BOT_TOKEN=${VTT_BOT_TOKEN} # Будет браться из .env файла в директории с docker-compose
+      - INFO_JSON_URL=${INFO_JSON_URL}
+      - BOT_CODE_NAME_IN_INFO_JSON=${BOT_CODE_NAME_IN_INFO_JSON}
+      - DB_NAME=${DB_NAME:-data/vtt_stats.db} # Значение по умолчанию, если не задано
+    volumes:
+      # Монтируем директорию для хранения БД SQLite на хост
+      - ./bot_data:/app/data # БД будет храниться в ./bot_data/vtt_stats.db на хосте
+    # ports: # Порты не нужны, так как бот общается с Telegram API напрямую
