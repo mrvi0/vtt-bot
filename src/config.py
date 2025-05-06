@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv() # Загружает переменные из .env файла в окружение
-
+AD_SHOW_INTERVAL = int(os.getenv("AD_SHOW_INTERVAL", 5))
 TGTOKEN = os.getenv("VTT_BOT_TOKEN")
 if not TGTOKEN:
     raise ValueError("Необходимо установить переменную окружения VTT_BOT_TOKEN")

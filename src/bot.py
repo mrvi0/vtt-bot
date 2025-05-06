@@ -2,6 +2,7 @@ import logging
 import io
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
+import random
 
 # Относительные импорты из текущего пакета src
 from . import config 
@@ -19,6 +20,27 @@ dp = Dispatcher(bot)
 
 # Инициализация БД
 db_helpers.init_db()
+
+# --- Вспомогательная функция для получения рекламного текста ---
+async def get_ad_text() -> str | None:
+    shared_data = await utils.get_shared_info_async()
+    if not shared_data or "ads" not in shared_data:
+        return None
+
+    ads_config = shared_data["ads"]
+    default_ad = ads_config.get("default_ad_text")
+    additional_ads = ads_config.get("additional_ads", [])
+
+    if additional_ads:
+        # Если есть дополнительные объявления, выбираем случайно одно из них
+        # Можно усложнить логику выбора, если есть "weights"
+        selected_ad_obj = random.choice(additional_ads)
+        return selected_ad_obj.get("text")
+    elif default_ad:
+        # Если дополнительных нет, но есть дефолтное
+        return default_ad
+    
+    return None # Если вообще ничего нет
 
 # --- Обработчики Команд ---
 @dp.message_handler(commands=['start'])
@@ -106,6 +128,7 @@ async def show_stats_command(message: types.Message): # Переименовал
 
 # --- Обработчики Сообщений ---
 async def handle_audio_message(message: types.Message, audio_source, message_type: str):
+    global message_counter_for_ads # Используем глобальный счетчик
     user_id = message.from_user.id
     audio_file_io = io.BytesIO()
     processed_audio_io = None
@@ -115,22 +138,36 @@ async def handle_audio_message(message: types.Message, audio_source, message_typ
         audio_file_io.seek(0)
 
         if message_type == "voice":
-            # Голосовые сообщения часто уже в хорошем формате, но лучше перекодировать
-            # для консистентности и гарантии 16kHz mono WAV
             processed_audio_io = media_processor.process_audio_data(audio_file_io)
         elif message_type == "video_note":
             processed_audio_io = await media_processor.extract_audio_from_video_note(audio_file_io)
         
         if processed_audio_io:
-            text = media_processor.recognize_speech_from_object(processed_audio_io)
-            await message.reply(text)
+            recognized_text = media_processor.recognize_speech_from_object(processed_audio_io)
+            
+            # Логика добавления рекламы
+            ad_text_to_append = None
+            if config.AD_SHOW_INTERVAL > 0:
+                message_counter_for_ads += 1
+                if message_counter_for_ads % config.AD_SHOW_INTERVAL == 0:
+                    ad_text_to_append = await get_ad_text()
+                    message_counter_for_ads = 0 # Сбрасываем счетчик после показа
+
+            final_reply_text = recognized_text
+            if ad_text_to_append:
+                # Добавляем рекламу с новой строки, отделенной пустой строкой
+                final_reply_text += f"\n\n---\n{ad_text_to_append}" 
+            
+            await message.reply(final_reply_text, parse_mode=types.ParseMode.MARKDOWN) # Указываем parse_mode
             db_helpers.record_stat(user_id, message_type=message_type)
         else:
+            # ... (обработка ошибок, если аудио не извлечено/обработано) ...
+            # (как было ранее)
+            error_msg = "Не удалось обработать аудио."
             if message_type == "video_note":
-                await message.reply("Не удалось извлечь аудио из видеосообщения.")
-            else: # Общая ошибка для голосового, если process_audio_data вернет None
-                await message.reply("Не удалось обработать аудио.")
-                
+                error_msg = "Не удалось извлечь аудио из видеосообщения."
+            await message.reply(error_msg)
+            
     except Exception as e:
         logger.error(f"Error processing {message_type} message from {user_id}: {e}", exc_info=True)
         await message.reply(f"Произошла ошибка при обработке вашего {message_type} сообщения.")
