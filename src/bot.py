@@ -9,7 +9,7 @@ from . import config
 from . import utils
 from . import db_helpers
 from . import media_processor
-
+from aiogram.types import ParseMode
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -118,7 +118,7 @@ async def show_info(message: types.Message):
 @dp.message_handler(commands=['stats'])
 async def show_stats_command(message: types.Message): # Переименовал, чтобы не конфликтовать с функцией
     logger.info(f"User {message.from_user.id} used /stats")
-    stats_data = db_helpers.get_stats() # Пока синхронно
+    stats_data = await db_helpers.get_stats() # Пока синхронно
     # Если перейдешь на aiosqlite, здесь будет: stats_data = await db_helpers.get_stats_async()
     
     text = (f"📊 Статистика использования бота:\n"
@@ -130,8 +130,8 @@ async def show_stats_command(message: types.Message): # Переименовал
 
 # --- Обработчики Сообщений ---
 async def handle_audio_message(message: types.Message, audio_source, message_type: str):
-    global message_counter_for_ads # Используем глобальный счетчик
     user_id = message.from_user.id
+    chat_id = message.chat.id # Получаем chat_id
     audio_file_io = io.BytesIO()
     processed_audio_io = None
     
@@ -147,32 +147,42 @@ async def handle_audio_message(message: types.Message, audio_source, message_typ
         if processed_audio_io:
             recognized_text = media_processor.recognize_speech_from_object(processed_audio_io)
             
-            # Логика добавления рекламы
             ad_text_to_append = None
             if config.AD_SHOW_INTERVAL > 0:
-                message_counter_for_ads += 1
-                if message_counter_for_ads % config.AD_SHOW_INTERVAL == 0:
+                current_chat_ad_count = await db_helpers.increment_chat_ad_counter(chat_id)
+                logger.info(f"Chat {chat_id} ad counter: {current_chat_ad_count}")
+                
+                if current_chat_ad_count >= config.AD_SHOW_INTERVAL: # Используем >= для надежности
                     ad_text_to_append = await get_ad_text()
-                    message_counter_for_ads = 0 # Сбрасываем счетчик после показа
-
+                    await db_helpers.reset_chat_ad_counter(chat_id)
+                    logger.info(f"Showing ad in chat {chat_id}, counter reset.")
+            
             final_reply_text = recognized_text
             if ad_text_to_append:
-                # Добавляем рекламу с новой строки, отделенной пустой строкой
                 final_reply_text += f"\n\n---\n{ad_text_to_append}" 
             
-            await message.reply(final_reply_text, parse_mode=types.ParseMode.MARKDOWN) # Указываем parse_mode
-            db_helpers.record_stat(user_id, message_type=message_type)
+            # Для отключения превью ссылок, если ссылка одна:
+            # await message.reply(final_reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+            # Если ссылок может быть несколько и нужно отключить превью для всех,
+            # то нужно убедиться, что бот имеет права отправлять сообщения без web page preview
+            # или использовать HTML-разметку и тег <a href='...'>text</a> без превью по умолчанию.
+            # Для Markdown, если ссылка просто в тексте (не как [текст](url)), превью часто не бывает.
+            # Если ссылка в формате [текст](url), то для отключения превью нужен disable_web_page_preview.
+            # Проще всего для рекламного текста избегать формата [текст](url), а писать "Канал: t.me/канал"
+            # Но если хочешь кликабельные, то disable_web_page_preview=True
+            await message.reply(final_reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+
+            await db_helpers.record_stat(user_id, message_type=message_type) # Используем асинхронную версию
         else:
-            # ... (обработка ошибок, если аудио не извлечено/обработано) ...
-            # (как было ранее)
+            # ... (обработка ошибок как ранее) ...
             error_msg = "Не удалось обработать аудио."
             if message_type == "video_note":
                 error_msg = "Не удалось извлечь аудио из видеосообщения."
             await message.reply(error_msg)
             
     except Exception as e:
-        logger.error(f"Error processing {message_type} message from {user_id}: {e}", exc_info=True)
-        await message.reply(f"Произошла ошибка при обработке вашего {message_type} сообщения.")
+        logger.error(f"Error processing {message_type} message from {user_id} in chat {chat_id}: {e}", exc_info=True)
+        await message.reply(f"Произошла ошибка при обработке вашего сообщения.")
     finally:
         audio_file_io.close()
         if processed_audio_io:
@@ -189,11 +199,12 @@ async def process_video_note_message_handler(message: types.Message):
     await handle_audio_message(message, message.video_note, "video_note")
 
 async def on_startup(dispatcher):
-    logger.info("VTT Bot started")
+    await db_helpers.init_db()
+    logger.info("VTT Bot started and DB initialized.")
     # Можно добавить уведомление о запуске в Telegram/Gotify
 
 async def on_shutdown(dispatcher):
-    logger.info("VTT Bot shutting down")
+    logger.info("VTT Bot shutting down...")
     # Закрытие соединений с БД, если они глобальные (но мы их закрываем в функциях)
 
 def main():
