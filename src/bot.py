@@ -21,6 +21,8 @@ dp = Dispatcher(bot)
 # Инициализация БД
 db_helpers.init_db()
 
+message_counter_for_ads = 0
+
 # --- Вспомогательная функция для получения рекламного текста ---
 async def get_ad_text() -> str | None:
     shared_data = await utils.get_shared_info_async()
