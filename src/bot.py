@@ -199,12 +199,15 @@ async def process_video_note_message_handler(message: types.Message):
     await handle_audio_message(message, message.video_note, "video_note")
 
 async def on_startup(dispatcher):
-    await db_helpers.init_db()
+    await db_helpers.get_db_connection() # Устанавливаем соединение
+    await db_helpers.init_db()           # Инициализируем таблицы
+    logger.info("VTT Bot started and DB connection established & initialized.")
     logger.info("VTT Bot started and DB initialized.")
     # Можно добавить уведомление о запуске в Telegram/Gotify
 
 async def on_shutdown(dispatcher):
-    logger.info("VTT Bot shutting down...")
+    await db_helpers.close_db_connection() # Закрываем соединение
+    logger.info("VTT Bot shutting down and DB connection closed.")
     # Закрытие соединений с БД, если они глобальные (но мы их закрываем в функциях)
 
 def main():
