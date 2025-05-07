@@ -122,9 +122,9 @@ async def show_stats_command(message: types.Message): # Переименовал
     # Если перейдешь на aiosqlite, здесь будет: stats_data = await db_helpers.get_stats_async()
     
     text = (f"📊 Статистика использования бота:\n"
-            f" ├ Всего уникальных пользователей: {stats_data.get('total_users', 0)}\n"
-            f" ├ Уникальных пользователей сегодня: {stats_data.get('today_users', 0)}\n"
-            f" ├ Всего обработано сообщений: {stats_data.get('total_requests', 0)}\n"
+            f" ├ Всего пользователей: {stats_data.get('total_users', 0)}\n"
+            f" ├ Пользователей сегодня: {stats_data.get('today_users', 0)}\n"
+            f" ├ Обработано сообщений: {stats_data.get('total_requests', 0)}\n"
             f" └ Обработано сообщений сегодня: {stats_data.get('today_requests', 0)}")
     await message.reply(text)
 

@@ -69,17 +69,20 @@ async def get_stats():
     stats_data = {"total_users": 0, "today_users": 0, "total_requests": 0, "today_requests": 0}
     try:
         db = await get_db_connection()
+        # 1. Всего уникальных пользователей
         async with db.execute("SELECT COUNT(DISTINCT user_id) FROM stats") as cursor:
             row = await cursor.fetchone()
             stats_data["total_users"] = row[0] if row else 0
-        # ... (остальные запросы аналогично, используя 'db.execute') ...
-        async with db.execute("SELECT COUNT(DISTINCT user_id) FROM stats WHERE date = DATE('now')") as cursor:
+        # 2. Уникальных пользователей сегодня
+        async with db.execute("SELECT COUNT(DISTINCT user_id) FROM stats WHERE date = DATE('now')") as cursor: # <--- ВОЗМОЖНАЯ ПРОБЛЕМА ЗДЕСЬ
             row = await cursor.fetchone()
             stats_data["today_users"] = row[0] if row else 0
+        # 3. Всего обработано сообщений
         async with db.execute("SELECT COUNT(*) FROM stats") as cursor:
             row = await cursor.fetchone()
             stats_data["total_requests"] = row[0] if row else 0
-        async with db.execute("SELECT COUNT(*) FROM stats WHERE date = DATE('now')") as cursor:
+        # 4. Обработано сообщений сегодня
+        async with db.execute("SELECT COUNT(*) FROM stats WHERE date = DATE('now')") as cursor: # <--- И ЗДЕСЬ
             row = await cursor.fetchone()
             stats_data["today_requests"] = row[0] if row else 0
     except Exception as e:
