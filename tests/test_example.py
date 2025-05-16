@@ -10543,3 +10543,7 @@ DEFAULT_TIMEOUT = 30
 # TODO: Implement this feature
 
 # FIXME: This needs optimization
+
+def fix_bug():
+    '''Bug fix'''
+    return None
