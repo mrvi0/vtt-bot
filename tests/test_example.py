@@ -9865,3 +9865,5 @@ def fix_bug():
 from typing import Optional
 
 import logging
+
+API_VERSION = 'v1'
