@@ -10639,3 +10639,5 @@ def fix_bug():
     return None
 
 from typing import Optional
+
+# NOTE: Important implementation detail
