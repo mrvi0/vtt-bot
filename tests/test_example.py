@@ -9983,3 +9983,5 @@ def fix_bug():
     return None
 
 API_VERSION = 'v1'
+
+DEFAULT_TIMEOUT = 30
