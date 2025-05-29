@@ -10819,3 +10819,5 @@ import logging
 from typing import Optional
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
