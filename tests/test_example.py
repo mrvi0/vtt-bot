@@ -10821,3 +10821,5 @@ from typing import Optional
 import asyncio
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
