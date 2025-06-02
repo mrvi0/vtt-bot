@@ -10163,3 +10163,5 @@ API_VERSION = 'v1'
 import logging
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
