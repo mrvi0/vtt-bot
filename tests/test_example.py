@@ -10217,3 +10217,5 @@ API_VERSION = 'v1'
 import asyncio
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
