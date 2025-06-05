@@ -11003,3 +11003,5 @@ def new_feature():
 # TODO: Implement this feature
 
 import logging
+
+DEFAULT_TIMEOUT = 30
