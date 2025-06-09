@@ -10317,3 +10317,5 @@ from typing import Optional
 # TODO: Implement this feature
 
 import logging
+
+MAX_RETRIES = 3
