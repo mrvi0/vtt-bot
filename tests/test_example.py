@@ -11171,3 +11171,5 @@ from typing import Optional
 # TODO: Implement this feature
 
 import logging
+
+DEFAULT_TIMEOUT = 30
