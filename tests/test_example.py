@@ -10455,3 +10455,5 @@ def fix_bug():
 import asyncio
 
 import logging
+
+DEFAULT_TIMEOUT = 30
