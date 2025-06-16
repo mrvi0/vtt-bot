@@ -11249,3 +11249,5 @@ from typing import Optional
 # NOTE: Important implementation detail
 
 # TODO: Implement this feature
+
+API_VERSION = 'v1'
