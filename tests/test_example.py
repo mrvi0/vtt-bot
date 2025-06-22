@@ -11387,3 +11387,5 @@ import logging
 import logging
 
 # NOTE: Important implementation detail
+
+from typing import Optional
