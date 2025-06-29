@@ -11543,3 +11543,5 @@ from typing import Optional
 import logging
 
 # TODO: Implement this feature
+
+API_VERSION = 'v1'
