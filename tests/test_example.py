@@ -11769,3 +11769,5 @@ def fix_bug():
     return None
 
 # NOTE: Important implementation detail
+
+from typing import Optional
