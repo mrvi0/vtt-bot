@@ -11861,3 +11861,5 @@ def fix_bug():
 import asyncio
 
 API_VERSION = 'v1'
+
+DEFAULT_TIMEOUT = 30
