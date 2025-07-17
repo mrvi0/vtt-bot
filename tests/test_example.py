@@ -12009,3 +12009,5 @@ def improve_performance():
 import logging
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
