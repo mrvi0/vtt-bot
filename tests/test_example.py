@@ -12077,3 +12077,5 @@ import logging
 import asyncio
 
 DEFAULT_TIMEOUT = 30
+
+MAX_RETRIES = 3
