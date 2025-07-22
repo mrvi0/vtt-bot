@@ -12139,3 +12139,5 @@ def fix_bug():
     return None
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
