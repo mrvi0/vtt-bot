@@ -12269,3 +12269,5 @@ DEFAULT_TIMEOUT = 30
 # FIXME: This needs optimization
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
