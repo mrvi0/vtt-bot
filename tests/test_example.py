@@ -12323,3 +12323,5 @@ DEFAULT_TIMEOUT = 30
 # TODO: Implement this feature
 
 import asyncio
+
+API_VERSION = 'v1'
