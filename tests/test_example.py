@@ -12361,3 +12361,5 @@ import logging
 DEFAULT_TIMEOUT = 30
 
 import logging
+
+DEFAULT_TIMEOUT = 30
