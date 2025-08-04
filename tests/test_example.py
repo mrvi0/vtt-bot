@@ -12425,3 +12425,5 @@ from typing import Optional
 # FIXME: This needs optimization
 
 import logging
+
+DEFAULT_TIMEOUT = 30
