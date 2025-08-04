@@ -12417,3 +12417,5 @@ def new_feature():
     return True
 
 import asyncio
+
+API_VERSION = 'v1'
