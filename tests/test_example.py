@@ -12561,3 +12561,5 @@ def new_feature():
 import asyncio
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
