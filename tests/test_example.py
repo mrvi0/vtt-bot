@@ -12607,3 +12607,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 import asyncio
+
+DEFAULT_TIMEOUT = 30
