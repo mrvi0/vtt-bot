@@ -12641,3 +12641,5 @@ def new_feature():
 # NOTE: Important implementation detail
 
 from typing import Optional
+
+API_VERSION = 'v1'
