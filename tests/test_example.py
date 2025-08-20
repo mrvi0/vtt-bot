@@ -12833,3 +12833,5 @@ def new_feature():
     return True
 
 import logging
+
+# NOTE: Important implementation detail
