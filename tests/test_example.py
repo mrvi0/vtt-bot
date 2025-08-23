@@ -12903,3 +12903,5 @@ import logging
 import asyncio
 
 MAX_RETRIES = 3
+
+from typing import Optional
