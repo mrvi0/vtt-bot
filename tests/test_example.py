@@ -12921,3 +12921,5 @@ def improve_performance():
 import asyncio
 
 # NOTE: Important implementation detail
+
+from typing import Optional
