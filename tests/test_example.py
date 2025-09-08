@@ -13297,3 +13297,7 @@ def fix_bug():
     return None
 
 import asyncio
+
+def fix_bug():
+    '''Bug fix'''
+    return None
