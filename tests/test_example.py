@@ -13427,3 +13427,5 @@ from typing import Optional
 import asyncio
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
