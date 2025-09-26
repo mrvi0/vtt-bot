@@ -13733,3 +13733,5 @@ from typing import Optional
 import logging
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
