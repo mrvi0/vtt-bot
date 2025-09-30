@@ -13821,3 +13821,5 @@ import asyncio
 from typing import Optional
 
 # TODO: Implement this feature
+
+API_VERSION = 'v1'
