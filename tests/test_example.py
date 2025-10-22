@@ -14317,3 +14317,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 import logging
+
+MAX_RETRIES = 3
