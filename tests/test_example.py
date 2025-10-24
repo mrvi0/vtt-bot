@@ -14369,3 +14369,5 @@ from typing import Optional
 DEFAULT_TIMEOUT = 30
 
 import logging
+
+API_VERSION = 'v1'
