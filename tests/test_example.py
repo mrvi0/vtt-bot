@@ -14617,3 +14617,5 @@ DEFAULT_TIMEOUT = 30
 # NOTE: Important implementation detail
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
