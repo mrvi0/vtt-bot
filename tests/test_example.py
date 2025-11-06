@@ -14671,3 +14671,5 @@ def improve_performance():
 import logging
 
 import logging
+
+MAX_RETRIES = 3
