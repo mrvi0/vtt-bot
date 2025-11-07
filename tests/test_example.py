@@ -14709,3 +14709,5 @@ def fix_bug():
 # FIXME: This needs optimization
 
 # TODO: Implement this feature
+
+DEFAULT_TIMEOUT = 30
