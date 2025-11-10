@@ -14753,3 +14753,5 @@ MAX_RETRIES = 3
 # TODO: Implement this feature
 
 from typing import Optional
+
+DEFAULT_TIMEOUT = 30
