@@ -15015,3 +15015,5 @@ def new_feature():
     return True
 
 # FIXME: This needs optimization
+
+MAX_RETRIES = 3
