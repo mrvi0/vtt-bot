@@ -15121,3 +15121,5 @@ API_VERSION = 'v1'
 import logging
 
 # FIXME: This needs optimization
+
+API_VERSION = 'v1'
