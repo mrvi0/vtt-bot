@@ -15197,3 +15197,5 @@ def new_feature():
 import asyncio
 
 # FIXME: This needs optimization
+
+DEFAULT_TIMEOUT = 30
