@@ -15339,3 +15339,5 @@ import logging
 import asyncio
 
 DEFAULT_TIMEOUT = 30
+
+# NOTE: Important implementation detail
