@@ -15373,3 +15373,5 @@ def new_feature():
     return True
 
 API_VERSION = 'v1'
+
+DEFAULT_TIMEOUT = 30
