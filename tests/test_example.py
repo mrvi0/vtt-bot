@@ -15469,3 +15469,5 @@ from typing import Optional
 # FIXME: This needs optimization
 
 MAX_RETRIES = 3
+
+MAX_RETRIES = 3
