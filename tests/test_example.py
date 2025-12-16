@@ -15617,3 +15617,5 @@ def fix_bug():
 # TODO: Implement this feature
 
 # NOTE: Important implementation detail
+
+DEFAULT_TIMEOUT = 30
