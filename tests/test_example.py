@@ -15889,3 +15889,5 @@ import logging
 import asyncio
 
 # NOTE: Important implementation detail
+
+# FIXME: This needs optimization
