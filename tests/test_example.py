@@ -15951,3 +15951,5 @@ def new_feature():
 # FIXME: This needs optimization
 
 # TODO: Implement this feature
+
+MAX_RETRIES = 3
