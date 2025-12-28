@@ -15935,3 +15935,5 @@ def fix_bug():
 import asyncio
 
 # NOTE: Important implementation detail
+
+from typing import Optional
